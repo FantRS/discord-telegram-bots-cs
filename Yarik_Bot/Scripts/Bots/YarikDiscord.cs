@@ -6,17 +6,16 @@ namespace MainSpace
 {
     public sealed class YarikDiscord
     {
-        private static string? Token => Environment.GetEnvironmentVariable("YARIK_DISCORD_BOT_TOKEN");
+        private static string? Token => Environment.GetEnvironmentVariable("DISCORD_BOT_TOKEN");
 
         private DiscordClient? Client { get; set; }
 
-        private readonly PromptGenerator _promptGenerator;
+        private readonly SwearPromptGenerator _promptGenerator;
         private readonly UsersDB _usersDB;
-        private readonly Platform _currentPlatform = Platform.Discord;
 
         public YarikDiscord(DIContainer container)
         {
-            _promptGenerator = container.Resolve<PromptGenerator>();
+            _promptGenerator = container.Resolve<SwearPromptGenerator>();
             _usersDB = container.Resolve<UsersDB>();
         }
 

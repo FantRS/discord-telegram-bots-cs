@@ -8,17 +8,16 @@ namespace MainSpace
 {
     public sealed class YarikTelegram
     {
-        private string? Token => Environment.GetEnvironmentVariable("YARIK_BOT_TG_TOKEN");
+        private string? Token => Environment.GetEnvironmentVariable("TG_BOT_TOKEN");
 
         private TelegramBotClient? Client { get; set; }
 
-        private readonly PromptGenerator _promptGenerator;
+        private readonly SwearPromptGenerator _promptGenerator;
         private readonly UsersDB _usersDB;
-        private readonly Platform _platform = Platform.Telegram;
 
         public YarikTelegram(DIContainer container)
         {
-            _promptGenerator = container.Resolve<PromptGenerator>();
+            _promptGenerator = container.Resolve<SwearPromptGenerator>();
             _usersDB = container.Resolve<UsersDB>();
         }
 
@@ -27,7 +26,7 @@ namespace MainSpace
             Logger.Instance.LogInfo("Starting telegram...", LogPlace.Telegram);
 
             var cts = new CancellationTokenSource();
-            Client = new TelegramBotClient(Token, cancellationToken: cts.Token);
+            Client = new TelegramBotClient(Token ?? string.Empty, cancellationToken: cts.Token);
 
             Client.OnError += OnError;
             Client.OnMessage += OnMessage;
@@ -51,7 +50,7 @@ namespace MainSpace
 
                 await Client.SendMessage(msg.Chat, responce, replyParameters: msg);
 
-                Logger.Instance.LogDebug($"{msg} / id : {msg.From.Id}", LogPlace.Telegram);
+                Logger.Instance.LogDebug($"{msg} / id : {msg.From?.Id}", LogPlace.Telegram);
             }
         }
 

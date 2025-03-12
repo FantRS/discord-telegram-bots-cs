@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-
 namespace RostCont
 {
     public class DIContainer : IDisposable
@@ -22,7 +19,7 @@ namespace RostCont
         public DIEntry RegisterFactory<T>(string tag, Func<DIContainer, T> factory)
         {
             var key = (tag, typeof(T));
-            
+
             if (_entriesMap.ContainsKey(key))
             {
                 throw new Exception(
@@ -44,7 +41,7 @@ namespace RostCont
         public void RegisterInstance<T>(string tag, T instance)
         {
             var key = (tag, typeof(T));
-            
+
             if (_entriesMap.ContainsKey(key))
             {
                 throw new Exception(
@@ -82,15 +79,15 @@ namespace RostCont
             finally
             {
                 _resolutionsCache.Remove(key);
-            } 
-            
+            }
+
             throw new Exception($"Couldn't find dependency for tag {tag} and type {key.Item2.FullName}");
         }
 
         public void Dispose()
         {
             var entries = _entriesMap.Values;
-            
+
             foreach (var entry in entries)
             {
                 entry.Dispose();

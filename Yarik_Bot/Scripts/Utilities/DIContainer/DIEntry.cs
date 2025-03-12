@@ -8,7 +8,7 @@ namespace RostCont
         protected bool IsSingleton { get; set; }
 
         protected DIEntry() { }
-        
+
         protected DIEntry(DIContainer container)
         {
             Container = container;
@@ -28,13 +28,13 @@ namespace RostCont
 
         public abstract void Dispose();
     }
-    
+
     public class DIEntry<T> : DIEntry
     {
         private Func<DIContainer, T> Factory { get; }
         private T _instance;
         private IDisposable _disposableInstance;
-        
+
         public DIEntry(DIContainer container, Func<DIContainer, T> factory) : base(container)
         {
             Factory = factory;
@@ -48,7 +48,7 @@ namespace RostCont
             {
                 _disposableInstance = disposableInstance;
             }
-            
+
             IsSingleton = true;
         }
 
@@ -59,7 +59,7 @@ namespace RostCont
                 if (_instance == null)
                 {
                     _instance = Factory(Container);
-                    
+
                     if (_instance is IDisposable disposableInstance)
                     {
                         _disposableInstance = disposableInstance;

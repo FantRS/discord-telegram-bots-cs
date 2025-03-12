@@ -1,5 +1,4 @@
-﻿using MainSpace;
-using Npgsql;
+﻿using Npgsql;
 
 namespace MainSpace
 {
