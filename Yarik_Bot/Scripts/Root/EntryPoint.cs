@@ -17,11 +17,11 @@ namespace MainSpace
             diContainer.RegisterInstance(usersDB);
             diContainer.RegisterInstance(promptGenerator);
 
-            var yarikDiscord = new YarikDiscord(diContainer);
-            await yarikDiscord.Start();
+            var discordBot = new DiscordBot(diContainer);
+            await discordBot.Start();
 
-            var yarikTelegram = new YarikTelegram(diContainer);
-            await yarikTelegram.Start();
+            var telegramBot = new TelegramBot(diContainer);
+            await telegramBot.Start();
 
             await Task.Delay(-1);
         }

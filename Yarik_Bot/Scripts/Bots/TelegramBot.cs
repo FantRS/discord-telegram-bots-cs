@@ -6,7 +6,7 @@ using Telegram.Bot.Types.Enums;
 
 namespace MainSpace
 {
-    public sealed class YarikTelegram
+    public sealed class TelegramBot
     {
         private string? Token => Environment.GetEnvironmentVariable("TG_BOT_TOKEN");
 
@@ -15,7 +15,7 @@ namespace MainSpace
         private readonly SwearPromptGenerator _promptGenerator;
         private readonly UsersDB _usersDB;
 
-        public YarikTelegram(DIContainer container)
+        public TelegramBot(DIContainer container)
         {
             _promptGenerator = container.Resolve<SwearPromptGenerator>();
             _usersDB = container.Resolve<UsersDB>();

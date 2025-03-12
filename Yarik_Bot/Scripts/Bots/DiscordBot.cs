@@ -4,7 +4,7 @@ using RostCont;
 
 namespace MainSpace
 {
-    public sealed class YarikDiscord
+    public sealed class DiscordBot
     {
         private static string? Token => Environment.GetEnvironmentVariable("DISCORD_BOT_TOKEN");
 
@@ -13,7 +13,7 @@ namespace MainSpace
         private readonly SwearPromptGenerator _promptGenerator;
         private readonly UsersDB _usersDB;
 
-        public YarikDiscord(DIContainer container)
+        public DiscordBot(DIContainer container)
         {
             _promptGenerator = container.Resolve<SwearPromptGenerator>();
             _usersDB = container.Resolve<UsersDB>();
