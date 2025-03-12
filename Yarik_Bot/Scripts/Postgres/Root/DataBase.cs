@@ -11,6 +11,6 @@ namespace MainSpace
             Connection = new NpgsqlConnection(connectionString);
         }
 
-        protected abstract void OpenConnection();
+        protected virtual void OpenConnection() { }
     }
 }

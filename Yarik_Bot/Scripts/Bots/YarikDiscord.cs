@@ -1,6 +1,6 @@
 ﻿using DSharpPlus;
 using DSharpPlus.EventArgs;
-using RostCunt;
+using RostCont;
 
 namespace MainSpace
 {
@@ -12,7 +12,7 @@ namespace MainSpace
 
         private readonly PromptGenerator _promptGenerator;
         private readonly UsersDB _usersDB;
-        private readonly Platform _platform = Platform.Discord;
+        private readonly Platform _currentPlatform = Platform.Discord;
 
         public YarikDiscord(DIContainer container)
         {
@@ -63,21 +63,6 @@ namespace MainSpace
                 string? referencedMessage = message.ReferencedMessage?.Content;
                 string responce = await _promptGenerator.GenerateAsync(message.Content, username, referencedMessage);
                 await message.RespondAsync(responce);
-
-                /// database
-                bool userExistence = await _usersDB.CheckToUserExists(authorId.ToString(), _platform);
-                if (userExistence)
-                {
-                    //await _usersDB.InsertToUsageTable(newPlatformId, 1, 1, DateTime.Now);
-                }
-                else
-                {
-                    int newUserId = await _usersDB.InsertToUserTable(DateTime.Now, DateTime.Now);
-                    int newPlatformId = await _usersDB.InsertUserPlatformsTable(_platform, newUserId, authorId.ToString());
-                    await _usersDB.InsertToUsageTable(newPlatformId, 1, 1, DateTime.Now);
-                }
-
-
 
                 Logger.Instance.LogDebug(message, LogPlace.Discord);
             }

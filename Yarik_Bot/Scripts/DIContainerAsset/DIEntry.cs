@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RostCunt
+namespace RostCont
 {
     public abstract class DIEntry : IDisposable
     {

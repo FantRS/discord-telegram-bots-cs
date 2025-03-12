@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace RostCunt
+namespace RostCont
 {
     public class DIContainer : IDisposable
     {

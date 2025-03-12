@@ -1,16 +1,16 @@
 ﻿using Claudia;
-using RostCunt;
+using RostCont;
 
 namespace MainSpace
 {
     public class EntryPoint
     {
-        private static string? API_KEY => Environment.GetEnvironmentVariable("YARIK_DISCORD_BOT_APIKEY");
-        private static string ConnectionString => "Host=localhost;Port=5432;Username=postgres;Password=freesexpassword;Database=postgres;";
+        private static string? API_KEY => Environment.GetEnvironmentVariable("YARIK_BOTCHAT_APIKEY");
+        private static string? CONNECTION_STRING => Environment.GetEnvironmentVariable("YARIK_DB_CONN_STRING");
 
         private static async Task Main()
         {
-            var usersDB = new UsersDB(ConnectionString);
+            var usersDB = new UsersDB(CONNECTION_STRING ?? string.Empty);
             var promptGenerator = new PromptGenerator(new Anthropic { ApiKey = API_KEY ?? string.Empty });
 
             var diContainer = new DIContainer();
@@ -23,7 +23,6 @@ namespace MainSpace
             var yarikTelegram = new YarikTelegram(diContainer);
             await yarikTelegram.Start();
 
-            Logger.Instance.LogInfo("Global logger");
             await Task.Delay(-1);
         }
     }
