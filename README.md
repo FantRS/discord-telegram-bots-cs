@@ -19,10 +19,10 @@ Both bots respond to messages based on predefined conditions and generate respon
 ---
 
 ## 📁 Project Structure
-- `EntryPoint.cs` # App entry with initialization and DI setup
-- `DiscordBot.cs` # Handles Discord bot logic and event responses
-- `TelegramBot.cs` # Handles Telegram bot logic and updates
-- `DIContainer.cs/` # Contains DIContainer and related logic
+- `EntryPoint.cs` - App entry with initialization and DI setup
+- `DiscordBot.cs` - Handles Discord bot logic and event responses
+- `TelegramBot.cs` - Handles Telegram bot logic and updates
+- `DIContainer.cs/` - Contains DIContainer and related logic
 
 ---
 
