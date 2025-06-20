@@ -8,23 +8,19 @@ namespace MainSpace
 {
     public sealed class TelegramBot
     {
-        private string? Token => Environment.GetEnvironmentVariable("TG_BOT_TOKEN");
+        private string? Token => Environment.GetEnvironmentVariable("TELEGRAM_BOT_TOKEN");
 
         private TelegramBotClient? Client { get; set; }
 
         private readonly SwearPromptGenerator _promptGenerator;
-        private readonly UsersDB _usersDB;
 
         public TelegramBot(DIContainer container)
         {
             _promptGenerator = container.Resolve<SwearPromptGenerator>();
-            _usersDB = container.Resolve<UsersDB>();
         }
 
         public async Task Start()
         {
-            Logger.Instance.LogInfo("Starting telegram...", LogPlace.Telegram);
-
             var cts = new CancellationTokenSource();
             Client = new TelegramBotClient(Token ?? string.Empty, cancellationToken: cts.Token);
 
@@ -49,8 +45,6 @@ namespace MainSpace
                 string responce = await _promptGenerator.GenerateAsync(msg.Text, username, msg.ReplyToMessage?.Text);
 
                 await Client.SendMessage(msg.Chat, responce, replyParameters: msg);
-
-                Logger.Instance.LogDebug($"{msg} / id : {msg.From?.Id}", LogPlace.Telegram);
             }
         }
 

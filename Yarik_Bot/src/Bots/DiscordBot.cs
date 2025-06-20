@@ -11,17 +11,14 @@ namespace MainSpace
         private DiscordClient? Client { get; set; }
 
         private readonly SwearPromptGenerator _promptGenerator;
-        private readonly UsersDB _usersDB;
 
         public DiscordBot(DIContainer container)
         {
             _promptGenerator = container.Resolve<SwearPromptGenerator>();
-            _usersDB = container.Resolve<UsersDB>();
         }
 
         public async Task Start()
         {
-            Logger.Instance.LogInfo("Starting discord...", LogPlace.Discord);
             Client = new DiscordClient(GetDiscordConfig());
 
             Client.Ready += ClientOnReady;
@@ -62,8 +59,6 @@ namespace MainSpace
                 string? referencedMessage = message.ReferencedMessage?.Content;
                 string responce = await _promptGenerator.GenerateAsync(message.Content, username, referencedMessage);
                 await message.RespondAsync(responce);
-
-                Logger.Instance.LogDebug(message, LogPlace.Discord);
             }
         }
 
