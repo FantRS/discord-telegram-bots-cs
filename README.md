@@ -35,7 +35,7 @@ git clone https://github.com/yourusername/multibot-responder.git
 cd multibot-responder
 ```
 
-2. Set Environment Variables
+### 2. Set Environment Variables
 Set the required tokens and API key in your environment:
 
 - `DISCORD_BOT_TOKEN` — your Discord bot token
