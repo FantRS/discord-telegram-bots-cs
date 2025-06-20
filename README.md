@@ -19,10 +19,10 @@ Both bots respond to messages based on predefined conditions and generate respon
 ---
 
 ## 📁 Project Structure
-- `EntryPoint.cs` - App entry with initialization and DI setup
-- `DiscordBot.cs` - Handles Discord bot logic and event responses
-- `TelegramBot.cs` - Handles Telegram bot logic and updates
-- `DIContainer.cs/` - Contains DIContainer and related logic
+- `EntryPoint.cs` — App entry with initialization and DI setup
+- `DiscordBot.cs` — Handles Discord bot logic and event responses
+- `TelegramBot.cs` — Handles Telegram bot logic and updates
+- `DIContainer.cs/` — Contains DIContainer and related logic
 
 ---
 
@@ -31,8 +31,8 @@ Both bots respond to messages based on predefined conditions and generate respon
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/multibot-responder.git
-cd multibot-responder
+git clone https://github.com/5antUA/discord-telegram-bots-cs.git
+cd discord-telegram-bot-cs/Yarik_Bot
 ```
 
 ### 2. Set Environment Variables
