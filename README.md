@@ -42,20 +42,21 @@ Set the required tokens and API key in your environment:
 - `TELEGRAM_BOT_TOKEN` — your Telegram bot token
 - `ANTHROPIC_API_KEY` — API key for the language model
 
-> On Linux/macOS:
+On Linux/macOS:
 ```bash
 export DISCORD_BOT_TOKEN=your_token_here
 export TELEGRAM_BOT_TOKEN=your_token_here
 export ANTHROPIC_API_KEY=your_api_key_here
 ```
-> On Windows (CMD):
+
+On Windows (CMD):
 ```bash
 setx DISCORD_BOT_TOKEN "your_token_here"
 setx TELEGRAM_BOT_TOKEN "your_token_here"
 setx ANTHROPIC_API_KEY "your_token_here"
 ```
-> On Windows (using GUI):
 
+On Windows (using GUI):
 [Read official Microsoft guide](https://learn.microsoft.com/ru-ru/sql/integration-services/lesson-1-1-creating-working-folders-and-environment-variables?view=sql-server-ver16)
 
 ---
