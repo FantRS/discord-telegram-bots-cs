@@ -58,7 +58,7 @@ setx ANTHROPIC_API_KEY "your_token_here"
 
 On Windows (using GUI):  
 ```bash
-curl [Creating Working Folders and Environment Variables](https://learn.microsoft.com/ru-ru/sql/integration-services/lesson-1-1-creating-working-folders-and-environment-variables?view=sql-server-ver16)
+curl https://learn.microsoft.com/ru-ru/sql/integration-services/lesson-1-1-creating-working-folders-and-environment-variables?view=sql-server-ver16
 ```
 
 ---
