@@ -50,7 +50,7 @@ namespace MainSpace
 
         private bool CheckMessageCondition(Message msg, UpdateType type)
         {
-            return (msg.Text.ToLower().Contains("олег") || msg.ReplyToMessage?.Text != null) && type == UpdateType.Message;
+            return (msg.Text.ToLower().Contains(Configuration.KEYWORD) || msg.ReplyToMessage?.Text != null) && type == UpdateType.Message;
         }
 
         private async Task OnUpdate(Update update)

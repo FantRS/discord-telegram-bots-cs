@@ -66,7 +66,7 @@ namespace MainSpace
         {
             var message = eventArgs.Message;
 
-            return message.Content.ToLower().Contains("олег") || message.ReferencedMessage != null;
+            return message.Content.ToLower().Contains(Configuration.KEYWORD) || message.ReferencedMessage != null;
         }
 
         private Task ClientOnReady(DiscordClient sender, ReadyEventArgs args)
