@@ -63,6 +63,15 @@ On Windows (using GUI):
 
 ---
 
+## 🔄 Running the App
+Build and run the project via your preferred method (e.g., Visual Studio or CLI):
+```bash
+dotnet build
+dotnet run
+```
+
+---
+
 ## 🧠 How It Works
 ### Trigger Conditions
 Both bots will generate a response when:
@@ -85,15 +94,6 @@ Feel free to edit the source code to tailor the bots to your needs:
 - Change the trigger keyword (`Configuration.KEYWORD`)
 - Modify how prompts are structured (`Configuration.GetPrompt()`)
 - Add new commands, filters, or events to Discord and Telegram bots
-
----
-
-## 🔄 Running the App
-Build and run the project via your preferred method (e.g., Visual Studio or CLI):
-```bash
-dotnet build
-dotnet run
-```
 
 ---
 
