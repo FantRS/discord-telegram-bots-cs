@@ -95,3 +95,9 @@ dotnet build
 dotnet run
 ```
 
+---
+
+## 👨‍💻 Author
+Rostyslav Kashper  
+Rust dev / Game dev  
+GitHub: _[5antUA](https://github.com/5antUA)_
