@@ -50,9 +50,9 @@ export ANTHROPIC_API_KEY=your_api_key_here
 ```
 > On Windows (CMD):
 ```bash
-set DISCORD_BOT_TOKEN=your_token_here
-set TELEGRAM_BOT_TOKEN=your_token_here
-set ANTHROPIC_API_KEY=your_api_key_here
+setx DISCORD_BOT_TOKEN "your_token_here"
+setx TELEGRAM_BOT_TOKEN "your_token_here"
+setx ANTHROPIC_API_KEY "your_token_here"
 ```
 
 ---
