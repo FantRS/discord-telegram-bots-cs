@@ -103,4 +103,3 @@ This project is fully open and customizable. You can:
 - Integrate other AI models or APIs into SwearPromptGenerator
 - All code is clean, modular, and commented to simplify understanding and adjustment.
 
----
