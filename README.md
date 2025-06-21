@@ -55,7 +55,7 @@ setx TELEGRAM_BOT_TOKEN "your_token_here"
 setx ANTHROPIC_API_KEY "your_token_here"
 ```
 > On Windows (using GUI):
-`https://learn.microsoft.com/ru-ru/sql/integration-services/lesson-1-1-creating-working-folders-and-environment-variables?view=sql-server-ver16`
+```https://learn.microsoft.com/ru-ru/sql/integration-services/lesson-1-1-creating-working-folders-and-environment-variables?view=sql-server-ver16```
 
 ---
 
