@@ -63,7 +63,7 @@ On Windows (using GUI):
 
 ---
 
-## 🔄 Running the App
+### 3. Running the App
 Build and run the project via your preferred method (e.g., Visual Studio or CLI):
 ```bash
 dotnet build
