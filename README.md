@@ -98,4 +98,4 @@ Feel free to edit the source code to tailor the bots to your needs:
 ## 👨‍💻 Author
 **Rostyslav Kashper**  
 Rust dev / Game dev  
-GitHub: _[5antUA](https://github.com/5antUA)_
+GitHub: _[FantRS](https://github.com/FantRS)_
